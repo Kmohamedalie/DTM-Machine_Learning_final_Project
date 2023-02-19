@@ -11,6 +11,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="nicepage.css" media="screen" />
     <link rel="stylesheet" href="Home.css" media="screen" />
+    <link rel="stylesheet" href="button.css" media="screen" />
+
     <script
       class="u-script"
       type="text/javascript"
@@ -49,12 +51,7 @@
     <meta property="og:type" content="website" />
     <link rel="canonical" href="/" />
   </head>
-  <body
-    data-home-page="https://website3305839.nicepage.io/Home.html?version=09a05899-7fa3-4d5e-8d34-9d43ceb25882"
-    data-home-page-title="Home"
-    class="u-body u-xl-mode"
-    data-lang="en"
-  >
+  <body class="u-body u-xl-mode" data-lang="en">
     <header class="u-clearfix u-header u-header" id="sec-edd5">
       <div class="u-clearfix u-sheet u-sheet-1">
         <nav
@@ -154,7 +151,7 @@
                     >
                   </li>
                   <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link" href="ML_vs_DL.html"
+                    <a class="u-button-style u-nav-link" href="Content.html"
                       >Content</a
                     >
                   </li>
@@ -186,6 +183,7 @@
         </a>
       </div>
     </header>
+    <div id="top"></div>
     <section class="u-clearfix u-image u-section-1" id="sec-bceb">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-container-style u-group u-group-1">
@@ -257,6 +255,7 @@
         </div>
       </div>
     </section>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <section class="u-clearfix u-grey-80 u-section-3" id="sec-c5d4">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div
@@ -369,7 +368,9 @@
                     Robotization
                   </h3>
                   <p class="u-text u-text-2">
-                    When the first industrial revolution&nbsp;
+                    <a href="https://www.youtube.com/watch?v=EGoovOGSsNw"
+                      >First industrial revolution</a
+                    >&nbsp;
                   </p>
                 </div>
               </div>
@@ -487,7 +488,10 @@
                     Engineering
                   </h3>
                   <p class="u-text u-text-4">
-                    When the first industrial revolution&nbsp;
+                    <a
+                      href="https://www.youtube.com/watch?v=6dME3wgaQpM&list=PL1331A4548513EA81"
+                      >Invention of Computers</a
+                    >&nbsp;
                   </p>
                 </div>
               </div>
@@ -546,7 +550,9 @@
                     Industry
                   </h3>
                   <p class="u-text u-text-6">
-                    When the first industrial revolution&nbsp;
+                    <a href="https://www.youtube.com/watch?v=WrG2Ih7pgoI"
+                      >Industry 4.0</a
+                    >&nbsp;
                   </p>
                 </div>
               </div>
@@ -737,6 +743,32 @@
           </div>
         </div>
       </div>
+      <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+          scrollFunction();
+        };
+
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
     </footer>
   </body>
 </html>
