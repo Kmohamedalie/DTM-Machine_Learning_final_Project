@@ -17,8 +17,11 @@ Computer vision; machine learning; deep learning; feature descriptor; <a href="h
    Computer vision is a field of artificial intelligence (AI) that enables computers and systems to derive meaningful information from digital images, videos, and other visual inputs - and take actions or make recommendations based on that information. Computer vision enables machines to see, observe and understand, while AI enables computers to think [1].
     In this paper we will do a comparative analysis of image recognition between machine learning using feature descriptions and support vector machine <a href="https://scikit-learn.org/stable/modules/svm.html">(svm)</a> Classifier vs deep learning using convolutional neural networks <a href="https://insightsimaging.springeropen.com/articles/10.1007/s13244-018-0639-9#:~:text=CNN%20is%20a%20type%20of,%2D%20to%20high%2Dlevel%20patterns">(CNN)</a>, on CIFAR-10 dataset. The comparison will be based on the following aspects: data, accuracy, training time, hardware, features, interpretability.
 
+<div align="center">
 
 ![image](https://user-images.githubusercontent.com/63104472/219057648-0096a8cb-2048-4d14-9d9c-a79ed146da70.png)
+
+</div>
 
 Figure 1: Machine learning vs deep learning    source: <a href="https://www.projectpro.io/article/deep-learning-vs-machine-learning-whats-the-difference/414#toc-5">projectpro</a>
 
@@ -31,8 +34,11 @@ cat, deer, dog, frog, horse, ship, and truck (but not pickup truck). There are 6
 with 5000 training and 1000 testing images per class [2]. 
     The <a href="https://www.cs.toronto.edu/~kriz/cifar.html">data</a> provided by the university of Toronto is already pre-processed and stored in batch files [3] however we will use raw images rather than already pre-processed in our analysis which we downloaded from <a href="https://www.kaggle.com/datasets/oxcdcd/cifar10">Kaggle [4]</a>.
 
+<div align="center">
 
 ![image](https://user-images.githubusercontent.com/63104472/219051600-89dd5ffa-ef60-4705-8b28-0c614ae90826.png)
+
+</div>
 
 Figure 2: Cifar-10 images                         source: <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a>
 
@@ -41,8 +47,11 @@ Figure 2: Cifar-10 images                         source: <a href="https://www.c
 a. <a href="https://iopscience.iop.org/article/10.1088/1742-6596/1314/1/012148">A Comparison of Traditional Machine Learning and Deep Learning in Image Recognition</a> by 
 Yunfei Lai. In Lai’s paper he made a comparative analysis between old traditional machine learning technique using <a href="https://it.wikipedia.org/wiki/Vladimir_Vapnik"> "Vapnik’s</a> svm (RBF (Radial Basis Function)) ‘kernel trick’ on <a href="https://it.wikipedia.org/wiki/Yann_LeCun">Yann LeCun’s</a> famous <a href="https://www.tensorflow.org/datasets/catalog/mnist?hl=it">Mnist dataset</a>, which is a large dataset black and white images (one channel) of handwritten digits that is commonly employed as training and testing set in the field of machine learning, and deep learning consisting of three-layer convolution neural shown in figure 3. 
 
+<div align="center">
 
 ![image](https://user-images.githubusercontent.com/63104472/219052056-b895ebd7-08da-4139-8e9c-aa6429ae5658.png)
+
+</div>
 
 Figure 3: Yunfei Lai CNN network                                 source:<a href="https://iopscience.iop.org/article/10.1088/1742-6596/1314/1/012148">iopscience</a>
 
@@ -51,7 +60,11 @@ The overall result achieved in the testing set using SVM is 93.92% total accurac
 Figure 4 shows detailed summary of Yunfei Lai’s experiment. 
 
 
+<div align="center">
+
  ![image](https://user-images.githubusercontent.com/63104472/219052674-d50e8ae7-7e56-4644-9667-98c9331aedbb.png)
+
+</div>
 
   Figure 4: Yunfei’s SVM and CNNs comparison            source:<a href="https://iopscience.iop.org/article/10.1088/1742-6596/1314/1/012148">iopscience</a>
 
@@ -65,24 +78,31 @@ a. SVM and feature descriptors
 (iii). SVM (Support Vector Machines) algorithm: Support vector machines (SVMs) are a set of
 supervised learning methods used for classification, regression, and outlier detection [7]. It was proposed by Vladimir N. Vapnik and Alexey Ya. Chervonenkis in 1963 but was only able to deal with linear classification problems, because of this it was later improved to a method called ‘kernel trick’, which was able to solve non – linear classification problems. 
 
-
+<div align="center">
+ 
  ![image](https://user-images.githubusercontent.com/63104472/219052930-e6badf27-8a17-44c9-b711-ac367ad171d0.png)
+ 
+</div>
 
 Figure 5: The intuition of SVM Algorithm
 
 
 There are so many different kernel tricks and for our analysis we will use RBF (Radial Basis Function) because of its similarity to k-nearest neighbor algorithm.
  
-
+<div align="center">
+ 
 ![image](https://user-images.githubusercontent.com/63104472/219053121-b99260a2-2f9b-4481-b358-7ef32d0f9495.png)
 
+</div>
 Figure 6: The svm classifier
 
 
 The RBF equation: 
-
+<div align="center">
+ 
 ![image](https://user-images.githubusercontent.com/63104472/219053358-058eb1f5-9add-4d5e-9b84-af244c235d35.png)
 
+</div>
 
 Model Architecture: SVM (RBF) + HOG + 128
 Where feature type: HOG, image size: 128, model: SVM
@@ -96,8 +116,11 @@ First introduced by Kunihiko FuKushima in the 1979 called “Neocognitron”, a 
 Model Architecture:
 The proposed solution has four <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">convolutional</a>  and <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network"> pooling layers</a>, one flattened, two full connected layers and an output layer. The first convolution layer has a filter of 32, kernel size of 3, three channel image size of 64x64, and a relu activation function. The second layer is <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">Max pooling </a> with pool size and strides set to 2. One flattened layer, two fully connected layers with <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">relu activation function</a>, a final output layer with 10 neurons for each one of the 10 classes and a <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">SoftMax activation function</a> for multiclass, which is suitable and better than <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">sigmoid</a>.
 
+<div align="center">
 
  ![image](https://user-images.githubusercontent.com/63104472/219053733-92dea681-3bd4-4590-9821-1427825179aa.png)
+
+ </div>
 
 Figure 8: Model architecture                    source: project notebook
 
